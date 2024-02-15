@@ -81,7 +81,7 @@ module "project-services" {
   activate_apis = toset(var.required_apis)
 }
 
-resource "google_iap_brand" "project_brand" {
+/*resource "google_iap_brand" "project_brand" {
   depends_on        = [module.project-services]
   support_email     = data.google_client_openid_userinfo.me.email
   application_title = "Guacamole on GKE Tutorial"
@@ -91,7 +91,7 @@ resource "google_iap_brand" "project_brand" {
 resource "google_iap_client" "project_client" {
   display_name = "Guacamole IAP Client"
   brand        = google_iap_brand.project_brand.name
-}
+}*/
 
 #resource "google_container_registry" "registry" {
 #  depends_on = [module.project-services]
