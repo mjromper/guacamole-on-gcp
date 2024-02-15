@@ -29,15 +29,15 @@ mkdir -p ${DESTINATION}/lib
 #
 
 cd ${BUILD_DIR}
-mvn package
+#mvn package
 
 # 
 # Copy IAP auth extension and schema modifications
 #
 
 if [ -f target/guacamole-auth-googleiap*.jar ]; then
-    echo "googleiap Extension Built - copying to ${DESTINATION}"
-    cp target/guacamole-auth-googleiap*.jar ${DESTINATION}/extensions
-    cp target/lib/*.jar ${DESTINATION}/lib
+    #echo "googleiap Extension Built - copying to ${DESTINATION}"
+    #cp target/guacamole-auth-googleiap*.jar ${DESTINATION}/extensions
+   #cp target/lib/*.jar ${DESTINATION}/lib
 fi
 

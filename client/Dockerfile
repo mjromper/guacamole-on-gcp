@@ -33,7 +33,7 @@ COPY ./bin /opt/guacamole/bin
 COPY ./extensions/. ${BUILD_DIR}/extensions
 
 # Run the build itself
-#RUN /opt/guacamole/bin/build-googleiap.sh ${BUILD_DIR}/extensions/guacamole-auth-googleiap /etc/guacamole
+RUN /opt/guacamole/bin/build-googleiap.sh ${BUILD_DIR}/extensions/guacamole-auth-googleiap /etc/guacamole
 
 COPY ./extensions/*.jar /etc/guacamole/extensions
 
