@@ -40,7 +40,7 @@ data "google_compute_subnetwork" "subnet" {
 
 
 
-/*
+
 resource "google_compute_router" "router" {
   name    = "guacamole-router"
   region  = google_compute_subnetwork.subnet.region
@@ -55,6 +55,8 @@ resource "google_compute_router_nat" "nat" {
   source_subnetwork_ip_ranges_to_nat = "ALL_SUBNETWORKS_ALL_IP_RANGES"
 }
 
+
+
 resource "google_compute_global_address" "private_ip_address" {
   provider      = google
   name          = "private-ip-address"
@@ -64,6 +66,7 @@ resource "google_compute_global_address" "private_ip_address" {
   network       = google_compute_network.vpc.id
 }
 
+/*
 resource "google_compute_instance" "db-management" {
   name         = var.db_management_vm
   zone         = var.zone
@@ -87,6 +90,7 @@ resource "google_compute_instance" "db-management" {
     cloud_sql_ip = google_sql_database_instance.guacamole-mysql.private_ip_address
   }
 }
+*/
 
 resource "google_compute_firewall" "vpc-firewall" {
   name    = "permit-ssh-via-iap"
@@ -112,7 +116,7 @@ resource "google_compute_firewall" "permit-guac-to-vm-traffic" {
   source_ranges = [google_container_cluster.gke.cluster_ipv4_cidr]
 }
 
-*/
+
 
 resource "google_compute_global_address" "guacamole-external" {
   description  = "External IP Address Reservation for the Load Balancer"
