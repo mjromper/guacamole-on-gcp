@@ -24,11 +24,11 @@ configMapGenerator:
   - ./client/client-settings.properties
   name: guacamole-client-settings
   namespace: guacamole
-- files:
-  - truststore.jks
-  - clientstore.jks
-  name: java-trust-store
-  namespace: guacamole
+#- files:
+#  - truststore.jks
+#  - clientstore.jks
+#  name: java-trust-store
+#  namespace: guacamole
 
 
 secretGenerator:
