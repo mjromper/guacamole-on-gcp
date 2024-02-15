@@ -79,5 +79,5 @@ resource "local_file" "openid-secrets-properties" {
     openid_redirect_uri           = local.remote_url
   })
 
-  filename = "${path.module}/../client/db-secrets.properties"
+  filename = "${path.module}/../client/openid-secrets.properties"
 }
