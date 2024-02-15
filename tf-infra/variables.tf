@@ -1,6 +1,7 @@
 variable "project_id" {
   type        = string
   description = "The project to run tests against"
+  default = "tccc-1009"
 }
 
 variable "region" {
@@ -58,3 +59,5 @@ variable "required_apis" {
     "sqladmin.googleapis.com",
   "stackdriver.googleapis.com"]
 }
+
+
