@@ -37,7 +37,7 @@ secretGenerator:
   name: db-user-pass
   namespace: guacamole
 - envs:
-  - ./client/openid-secret.properties
+  - ./client/openid-secrets.properties
   name: guacamole-openid-secret
   namespace: guacamole
 #- envs:
