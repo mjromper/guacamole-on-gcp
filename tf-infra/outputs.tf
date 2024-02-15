@@ -19,23 +19,23 @@ output "project_id" {
 }
 
 output "db_address" {
-  value       = google_sql_database_instance.guacamole-mysql.private_ip_address
+  value       = var.q_db_address #google_sql_database_instance.guacamole-mysql.private_ip_address
   description = "Private IP Address for MySQL Database"
 }
 
 output "db_username" {
-  value       = google_sql_user.guac-db-user.name
+  value       = var.q_mysql_user #google_sql_user.guac-db-user.name
   description = "Guacamole DB User Name"
 }
 
 output "db_password" {
-  value       = google_sql_user.guac-db-user.password
+  value       = var.q_mysql_password #google_sql_user.guac-db-user.password
   description = "Guacamole DB User Password"
   sensitive   = true
 }
 
 output "db_root_password" {
-  value       = google_sql_user.guac-db-root.password
+  value       = "not needed" #google_sql_user.guac-db-root.password
   description = "Guacamole DB Root Password"
   sensitive   = true
 }
@@ -51,7 +51,7 @@ output "oauth_authorized_redirect_url" {
 }
 
 output "db_mgmt_vm" {
-  value       = google_compute_instance.db-management.name
+  value       = "not needed - Database Management VM Name" #google_compute_instance.db-management.name
   description = "Database Management VM Name"
 }
 
@@ -71,6 +71,6 @@ output "gke_cluster_name" {
 }
 
 output "subnet" {
-  value       = google_compute_subnetwork.subnet.name
+  value       = data.google_compute_subnetwork.subnet.name
   description = "Network subnet to attach test VMs to"
 }

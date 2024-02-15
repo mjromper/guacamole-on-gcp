@@ -45,7 +45,7 @@ resource "local_file" "guacamole-client-managedcert" {
 
 resource "local_file" "client-settings-properties" {
   content = templatefile("${path.module}/templates/client-settings.properties.tmpl", {
-    db_address           = google_sql_database_instance.guacamole-mysql.private_ip_address
+    db_address           = var.q_db_address #google_sql_database_instance.guacamole-mysql.private_ip_address
     truststore_password  = random_password.keystore_password.result
     clientstore_password = random_password.keystore_password.result
   })
@@ -63,8 +63,8 @@ resource "local_file" "tomcat-server-xml" {
 
 resource "local_file" "db-secrets-properties" {
   content = templatefile("${path.module}/templates/db-secrets.properties.tmpl", {
-    mysql_user     = google_sql_user.guac-db-user.name
-    mysql_password = google_sql_user.guac-db-user.password
+    mysql_user     = var.q_mysql_user #google_sql_user.guac-db-user.name
+    mysql_password = var.q_mysql_password #google_sql_user.guac-db-user.password
   })
 
   filename = "${path.module}/../client/db-secrets.properties"

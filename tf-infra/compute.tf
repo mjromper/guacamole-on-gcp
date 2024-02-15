@@ -13,19 +13,34 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-resource "google_compute_network" "vpc" {
+
+data "google_compute_network" "vpc" {
+  name = "workshop"
+}
+
+/*resource "google_compute_network" "vpc" {
   provider                = google
   name                    = var.network_name
   auto_create_subnetworks = "false"
+}*/
+
+
+data "google_compute_subnetwork" "subnet" {
+  name   = "workshop"
+  region = "us-central1"
 }
 
-resource "google_compute_subnetwork" "subnet" {
+/*resource "google_compute_subnetwork" "subnet" {
   name          = "guacamole-host-subnet"
   region        = var.region
   network       = google_compute_network.vpc.name
   ip_cidr_range = "10.10.0.0/24"
-}
+}*/
 
+
+
+
+/*
 resource "google_compute_router" "router" {
   name    = "guacamole-router"
   region  = google_compute_subnetwork.subnet.region
@@ -97,8 +112,11 @@ resource "google_compute_firewall" "permit-guac-to-vm-traffic" {
   source_ranges = [google_container_cluster.gke.cluster_ipv4_cidr]
 }
 
+*/
+
 resource "google_compute_global_address" "guacamole-external" {
   description  = "External IP Address Reservation for the Load Balancer"
   name         = "guacamole-external"
   address_type = "EXTERNAL"
 }
+
