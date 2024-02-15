@@ -69,3 +69,15 @@ resource "local_file" "db-secrets-properties" {
 
   filename = "${path.module}/../client/db-secrets.properties"
 }
+
+resource "local_file" "openid-secrets-properties" {
+  content = templatefile("${path.module}/templates/openid-secrets.properties.tmpl", {
+    openid_authorization_endpoint = var.openid_authorization_endpoint #google_sql_user.guac-db-user.name
+    openid_jwks_endpoint          = var.openid_jwks_endpoint #google_sql_user.guac-db-user.password
+    openid_issuer                 = var.openid_issuer #google_sql_user.guac-db-user.name
+    openid_client_id              = var.openid_client_id #google_sql_user.guac-db-user.password
+    openid_redirect_uri           = local.remote_url
+  })
+
+  filename = "${path.module}/../client/db-secrets.properties"
+}

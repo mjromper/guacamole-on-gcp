@@ -13,5 +13,7 @@ insert-admin-user.sql
 client/tomcat/conf/server.xml
 client/kubernetes-manifests/guacamole-client.managedcert.yaml
 
+.DS_Store
+
 # IDE
 .vscode

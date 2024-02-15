@@ -37,9 +37,13 @@ secretGenerator:
   name: db-user-pass
   namespace: guacamole
 - envs:
-  - ./client/iap-secrets.properties
-  name: guacamole-iap-secret
+  - ./client/openid-secret.properties
+  name: guacamole-openid-secret
   namespace: guacamole
+#- envs:
+#  - ./client/iap-secrets.properties
+#  name: guacamole-iap-secret
+#  namespace: guacamole
 
 resources:
 - client/kubernetes-manifests/guacamole-client.backendconfig.yaml
