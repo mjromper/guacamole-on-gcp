@@ -1,6 +1,7 @@
 # Generated Configuration / Keys
 client/client-settings.properties
 client/db-secrets.properties
+client/openid-secrets.properties
 client/iap-secrets.properties
 client/guacamole.properties
 server-ca.pem

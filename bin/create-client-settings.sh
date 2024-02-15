@@ -39,16 +39,18 @@ else
     echo "GUACD_PORT=${GUACD_PORT}" >> ${FILE}
     echo "MYSQL_HOSTNAME=${1}" >> ${FILE}
     echo "MYSQL_PORT=${2}" >> ${FILE}
-    echo "MYSQL_SSL_MODE=verify-ca" >> ${FILE}
+    #echo "MYSQL_SSL_MODE=verify-ca" >> ${FILE}
     # Bug https://issues.apache.org/jira/browse/GUACAMOLE-1135
     # echo "MYSQL_SSL_TRUST_STORE=file:/etc/config/truststore.jks" >> ${FILE}
     # echo "MYSQL_SSL_CLIENT_STORE=file:/etc/config/clientstore.jks" >> ${FILE}
 
     # Bug https://issues.apache.org/jira/browse/GUACAMOLE-1136
-    echo "MYSQL_SSL_TRUST_PASSWORD=$CLIENT_STORE_PASS" >> ${FILE}
-    echo "MYSQL_SSL_CLIENT_PASSWORD=$CLIENT_STORE_PASS" >> ${FILE}
-    echo "MYSQL_DATABASE=${3}?trustCertificateKeyStoreUrl=file:/etc/config/truststore.jks&clientCertificateKeyStoreUrl=file:/etc/config/clientstore.jks" >> ${FILE}
+    #echo "MYSQL_SSL_TRUST_PASSWORD=$CLIENT_STORE_PASS" >> ${FILE}
+    #echo "MYSQL_SSL_CLIENT_PASSWORD=$CLIENT_STORE_PASS" >> ${FILE}
+    #echo "MYSQL_DATABASE=${3}?trustCertificateKeyStoreUrl=file:/etc/config/truststore.jks&clientCertificateKeyStoreUrl=file:/etc/config/clientstore.jks" >> ${FILE}
+    echo "MYSQL_DATABASE=${3}" >> ${FILE}
     echo "LOGBACK_LEVEL=${LOGBACK_LEVEL}" >> ${FILE}
 
     rm $CLIENT_STORE_PASS_FILE
+
 fi
