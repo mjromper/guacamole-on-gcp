@@ -26,7 +26,7 @@ spec:
         requestPath: /guacamole/index.html
     # This timeout is how long the websocket used by Guacamole client can remain open
     timeoutSec: 7200
-    iap:
-        enabled: true
-        oauthclientCredentials:
-            secretName: guacamole-iap-secret
+    #iap:
+    #    enabled: true
+    #    oauthclientCredentials:
+    #        secretName: guacamole-iap-secret

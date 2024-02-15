@@ -50,6 +50,8 @@
                 name: guacamole-client-settings
             - secretRef:
                 name: db-user-pass
+            - secretRef:
+                name: guacamole-openid-secret
           resources:
             limits:
               cpu: 1000m
