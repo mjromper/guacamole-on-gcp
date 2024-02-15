@@ -76,7 +76,7 @@
             failureThreshold: 30
             periodSeconds: 10
             initialDelaySeconds: 20
-        volumes:
-          - name: config-volume
-            configMap:
-              name: java-trust-store
+        #volumes:
+        #  - name: config-volume
+        #    configMap:
+        #      name: java-trust-store
