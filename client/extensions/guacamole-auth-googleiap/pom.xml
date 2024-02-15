@@ -137,7 +137,7 @@ limitations under the License.
         <dependency>
             <groupId>org.apache.guacamole</groupId>
             <artifactId>guacamole-ext</artifactId>
-            <version>1.5.2</version>
+            <version>1.5.4</version>
             <scope>compile</scope>
         </dependency>
 

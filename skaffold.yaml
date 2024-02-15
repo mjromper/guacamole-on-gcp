@@ -21,7 +21,7 @@ build:
       context: ./client
       docker:
         buildArgs:
-          CLIENT_IMAGE: guacamole/guacamole:1.5.2
+          CLIENT_IMAGE: guacamole/guacamole:1.5.4
 manifests:
   kustomize:
     paths:
