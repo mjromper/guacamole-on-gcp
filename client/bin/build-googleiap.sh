@@ -29,7 +29,7 @@ mkdir -p ${DESTINATION}/lib
 #
 
 cd ${BUILD_DIR}
-mvn package
+#mvn package
 
 # 
 # Copy IAP auth extension and schema modifications
