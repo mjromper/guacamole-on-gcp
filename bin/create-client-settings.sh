@@ -50,6 +50,7 @@ else
     #echo "MYSQL_DATABASE=${3}?trustCertificateKeyStoreUrl=file:/etc/config/truststore.jks&clientCertificateKeyStoreUrl=file:/etc/config/clientstore.jks" >> ${FILE}
     echo "MYSQL_DATABASE=${3}" >> ${FILE}
     echo "LOGBACK_LEVEL=${LOGBACK_LEVEL}" >> ${FILE}
+    echo "EXTENSION_PRIORITY=*,openid" >> ${FILE}
 
     rm $CLIENT_STORE_PASS_FILE
 
