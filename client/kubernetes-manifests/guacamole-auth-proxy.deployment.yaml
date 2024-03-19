@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: guacamole-authproxy-client
+  namespace: guacamole
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: guacamole-authproxy-client
+  template:
+    metadata:
+      labels:
+        app: guacamole-authproxy-client
+    spec:
+      containers:
+      - name: guacamole-authproxy-client
+        image: guacamole-auth-proxy
+        imagePullPolicy: IfNotPresent
+        envFrom:
+          - configMapRef:
+              name: guacamole-client-settings
+        ports:
+        - containerPort: 8000
+          name: serving-port
+          protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /
+            port: serving-port
+          failureThreshold: 1
+          periodSeconds: 10
+          initialDelaySeconds: 60
+          timeoutSeconds: 5 
+        startupProbe:
+          httpGet:
+            path: /guacamole
+            port: serving-port
+          failureThreshold: 30
+          periodSeconds: 10
+          initialDelaySeconds: 20
