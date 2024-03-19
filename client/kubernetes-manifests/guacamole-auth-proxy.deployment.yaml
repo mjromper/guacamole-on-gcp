@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: guacamole-authproxy-client
-        image: guacamole-auth-proxy
+        image: us-central1-docker.pkg.dev/tccc-1009/guac-repo/guacamole-auth-proxy
         imagePullPolicy: IfNotPresent
         envFrom:
           - configMapRef:
