@@ -5,7 +5,10 @@ metadata:
   namespace: guacamole
 
 spec:
-  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
   selector:
     matchLabels:
       app: guacamole-authproxy-client
