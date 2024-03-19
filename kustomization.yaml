@@ -54,7 +54,7 @@ resources:
 - client/kubernetes-manifests/guacamole-client.service.yaml
 - client/kubernetes-manifests/guacamole-auth-proxy.deployment.yaml
 - client/kubernetes-manifests/guacamole-auth-proxy.service.yaml
-- client/kubernetes-manifests/guacamole-auth-proxy.ingress.yaml
+#- client/kubernetes-manifests/guacamole-auth-proxy.ingress.yaml
 - server/kubernetes-manifests/guacamole-server.deployment.yaml
 - server/kubernetes-manifests/guacamole-server.service.yaml
 - client/kubernetes-manifests/guacamole-client.rolebinding.yaml
