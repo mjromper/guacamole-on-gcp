@@ -17,6 +17,7 @@ spec:
       labels:
         app: guacamole-authproxy-client
     spec:
+      serviceAccountName: svc-guacamole
       containers:
       - name: guacamole-authproxy-client
         image: us-central1-docker.pkg.dev/tccc-1009/guac-repo/guacamole-auth-proxy
