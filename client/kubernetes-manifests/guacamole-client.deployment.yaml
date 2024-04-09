@@ -40,7 +40,7 @@
         serviceAccountName: svc-guacamole
         containers:
         - name: guacamole-client
-          image: guacamole-client-iap
+          image: docker.io/guacamole/guacamole:1.5.5
           imagePullPolicy: IfNotPresent
           volumeMounts:
             - name: config-volume
