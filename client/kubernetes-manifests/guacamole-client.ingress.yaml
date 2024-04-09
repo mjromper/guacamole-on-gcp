@@ -24,6 +24,6 @@ metadata:
 spec:
     defaultBackend:
         service:
-          name: guacamole-authproxy-client
+          name: guacamole-auth-proxy-service
           port: 
             number: 80
