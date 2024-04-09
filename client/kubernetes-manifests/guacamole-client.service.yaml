@@ -18,9 +18,9 @@ kind: Service
 metadata:
   name: guacamole-client-service
   namespace: guacamole
-  #annotations:
-  #  cloud.google.com/neg: '{"ingress": true}'
-  #  beta.cloud.google.com/backend-config: '{"default": "guacamole-config-default"}'
+  annotations:
+    cloud.google.com/neg: '{"ingress": true}'
+    beta.cloud.google.com/backend-config: '{"default": "guacamole-config-default"}'
 spec:
   type: NodePort
   selector:
