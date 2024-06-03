@@ -18,8 +18,8 @@ resource "google_container_cluster" "gke" {
   name               = "guacamole-gke-prod"
   location           = var.region
   networking_mode    = "VPC_NATIVE"
-  network            = "workshop" #google_compute_network.vpc.id
-  subnetwork         = "workshop" #google_compute_subnetwork.subnet.name
+  network            = "workshop-prod" #google_compute_network.vpc.id
+  subnetwork         = "workshop-prod" #google_compute_subnetwork.subnet.name
 
   private_cluster_config {
     enable_private_nodes    = true

@@ -15,7 +15,7 @@
 
 
 data "google_compute_network" "vpc" {
-  name = "workshop"
+  name = "workshop-prod"
 }
 
 /*resource "google_compute_network" "vpc" {
@@ -26,7 +26,7 @@ data "google_compute_network" "vpc" {
 
 
 data "google_compute_subnetwork" "subnet" {
-  name   = "workshop"
+  name   = "workshop-prod"
   region = "us-central1"
 }
 
