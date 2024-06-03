@@ -61,3 +61,36 @@ variable "required_apis" {
 }
 
 
+# MYSQL 
+variable "q_db_name" {
+  default = "APP_guacamole_uat"
+}
+
+variable "q_db_address" {
+  default = "presales-dwh.cluster-cdc6ngw47u0b.us-east-2.rds.amazonaws.com"
+}
+
+variable "q_mysql_password" {
+  default = "Rps76RycEQ5?@5EB"
+}
+
+variable "q_mysql_user" {
+  default = "app_guacamole"
+}
+
+# OPENID
+variable "openid_authorization_endpoint" {
+  default = "https://login.microsoftonline.com/organizations/oauth2/v2.0/authorize"
+}
+
+variable "openid_jwks_endpoint" {
+  default = "https://login.microsoftonline.com/organizations/discovery/v2.0/keys"
+}
+
+variable "openid_issuer" {
+  default = "https://login.microsoftonline.com/c21eeb5f-f5a6-44e8-a997-124f2f7a497c/v2.0"
+}
+
+variable "openid_client_id" {
+  default = "40742f13-bde8-4b1b-ac07-54c11b36b779"
+}
