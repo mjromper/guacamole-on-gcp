@@ -15,7 +15,7 @@
 
 
 data "google_compute_network" "vpc" {
-  name = "workshop-prod"
+  name = "workshop"
 }
 
 /*resource "google_compute_network" "vpc" {
@@ -26,7 +26,7 @@ data "google_compute_network" "vpc" {
 
 
 data "google_compute_subnetwork" "subnet" {
-  name   = "workshop-prod"
+  name   = "workshop"
   region = "us-central1"
 }
 
@@ -41,18 +41,29 @@ data "google_compute_subnetwork" "subnet" {
 
 
 
-resource "google_compute_router" "router" {
-  name    = "guacamole-router-prod"
+/*resource "google_compute_router" "router" {
+  name    = "guacamole-router"
   region  = data.google_compute_subnetwork.subnet.region
   network = data.google_compute_network.vpc.id
 }
 
 resource "google_compute_router_nat" "nat" {
-  name                               = "guacamole-router-nat-prod"
+  name                               = "guacamole-router-nat"
   router                             = google_compute_router.router.name
   region                             = google_compute_router.router.region
   nat_ip_allocate_option             = "AUTO_ONLY"
   source_subnetwork_ip_ranges_to_nat = "ALL_SUBNETWORKS_ALL_IP_RANGES"
+}*/
+
+data "google_compute_router" "router" {
+  name   = "guacamole-router"
+  network = data.google_compute_network.vpc.id
+}
+
+
+data "google_compute_router_nat" "nat" {
+  name = "guacamole-router-nat"
+  router = data.google_compute_router.router.name
 }
 
 
