@@ -40,6 +40,8 @@ resource "google_project_iam_member" "iap-web-user" {
 #  member             = "serviceAccount:${var.project_id}.svc.id.goog[guacamole/svc-guacamole]"
 #}
 
+/*
+# Commented out for prod
 resource "google_project_iam_custom_role" "iap-jwt-verify-role" {
   role_id     = "iap_jwt_verifier"
   title       = "IAP JWT Verifier"
@@ -58,4 +60,4 @@ resource "google_project_iam_member" "svc-gke-node-iam" {
   project = var.project_id
   member  = "serviceAccount:${google_service_account.svc-gke-node.email}"
   role    = each.value
-}
+}*/å
