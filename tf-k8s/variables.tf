@@ -16,5 +16,5 @@ variable "zone" {
 
 variable "cluster_name" {
   description = "GKE Cluster to host Guacamole"
-  default     = "guacamole-gke"
+  default     = "guacamole-gke-prod"
 }
