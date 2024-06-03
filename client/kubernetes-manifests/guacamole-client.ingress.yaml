@@ -19,7 +19,7 @@ metadata:
     name: guacamole-client-ingress
     namespace: guacamole-prod
     annotations:
-        kubernetes.io/ingress.global-static-ip-name: guacamole-external
+        kubernetes.io/ingress.global-static-ip-name: guacamole-external-prod
         networking.gke.io/managed-certificates: guacamole-client-cert
 spec:
     defaultBackend:
