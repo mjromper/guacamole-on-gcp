@@ -60,4 +60,4 @@ resource "google_project_iam_member" "svc-gke-node-iam" {
   project = var.project_id
   member  = "serviceAccount:${google_service_account.svc-gke-node.email}"
   role    = each.value
-}*/å
+}*/
