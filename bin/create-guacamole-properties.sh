@@ -20,7 +20,7 @@ GCLOUD=/usr/bin/gcloud
 
 GOOGLE_CLIENT_SERVICE_NAME=guacamole-client-service
 GOOGLE_CLIENT_SERVICE_PORT=80
-GOOGLE_CLIENT_SERVICE_NAMESPACE=guacamole
+GOOGLE_CLIENT_SERVICE_NAMESPACE=guacamole-prod
 
 if [ -z ${DEVSHELL_PROJECT_ID} ]; then
     echo "DEVSHELL_PROJECT_ID is not set - set manually, or run this script in GCP Cloud Shell"
