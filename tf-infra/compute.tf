@@ -42,7 +42,7 @@ data "google_compute_subnetwork" "subnet" {
 
 
 resource "google_compute_router" "router" {
-  name    = "guacamole-router"
+  name    = "guacamole-router-prod"
   region  = data.google_compute_subnetwork.subnet.region
   network = data.google_compute_network.vpc.id
 }
@@ -59,7 +59,7 @@ resource "google_compute_router_nat" "nat" {
 
 resource "google_compute_global_address" "private_ip_address" {
   provider      = google
-  name          = "private-ip-address"
+  name          = "private-ip-address-prod"
   purpose       = "VPC_PEERING"
   address_type  = "INTERNAL"
   prefix_length = 16
@@ -93,7 +93,7 @@ resource "google_compute_instance" "db-management" {
 */
 
 resource "google_compute_firewall" "vpc-firewall" {
-  name    = "permit-ssh-via-iap"
+  name    = "permit-ssh-via-iap-prod"
   network = data.google_compute_network.vpc.name
 
   allow {
@@ -105,7 +105,7 @@ resource "google_compute_firewall" "vpc-firewall" {
 }
 
 resource "google_compute_firewall" "permit-guac-to-vm-traffic" {
-  name    = "permit-guacd-to-vm-traffic"
+  name    = "permit-guacd-to-vm-traffic-prod"
   network = data.google_compute_network.vpc.name
 
   allow {
@@ -120,7 +120,7 @@ resource "google_compute_firewall" "permit-guac-to-vm-traffic" {
 
 resource "google_compute_global_address" "guacamole-external" {
   description  = "External IP Address Reservation for the Load Balancer"
-  name         = "guacamole-external"
+  name         = "guacamole-external-prod"
   address_type = "EXTERNAL"
 }
 

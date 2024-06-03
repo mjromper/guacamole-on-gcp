@@ -15,7 +15,7 @@
 
 resource "google_artifact_registry_repository" "guac-repo" {
   location      = var.region
-  repository_id = "guac-repo"
+  repository_id = "guac-repo-prod"
   description   = "Docker Repository For IAP Enabled Guacamole"
   format        = "DOCKER"
   depends_on = [module.project-services]
