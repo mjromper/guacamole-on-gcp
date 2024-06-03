@@ -17,7 +17,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: guacamole-client-service
-  namespace: guacamole
+  namespace: guacamole-prod
   #annotations:
   #  cloud.google.com/neg: '{"ingress": true}'
   #  beta.cloud.google.com/backend-config: '{"default": "guacamole-config-default"}'

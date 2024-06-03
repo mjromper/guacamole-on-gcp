@@ -17,7 +17,7 @@
   kind: Deployment
   metadata:
     name: guacamole-client
-    namespace: guacamole
+    namespace: guacamole-prod
     labels:
       app: guacamole-client
   spec:

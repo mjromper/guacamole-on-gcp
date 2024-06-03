@@ -17,7 +17,7 @@ apiVersion: networking.gke.io/v1
 kind: ManagedCertificate
 metadata:
     name: guacamole-client-cert
-    namespace: guacamole
+    namespace: guacamole-prod
 spec:
     domains:
         - ${remote_url}

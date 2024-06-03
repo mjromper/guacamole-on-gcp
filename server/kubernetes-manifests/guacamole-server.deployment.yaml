@@ -17,7 +17,7 @@
   kind: Deployment
   metadata:
     name: guacamole-server
-    namespace: guacamole
+    namespace: guacamole-prod
     labels:
       app: guacamole-server
       tier: backend

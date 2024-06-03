@@ -17,7 +17,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: guacamole-server-service
-  namespace: guacamole
+  namespace: guacamole-prod
 spec:
   selector:
     app: guacamole-server
