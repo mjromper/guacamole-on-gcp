@@ -37,7 +37,7 @@
         labels:
           app: guacamole-client
       spec:
-        serviceAccountName: svc-guacamole
+        serviceAccountName: svc-guacamole-prod
         containers:
         - name: guacamole-client
           image: guacamole-client-iap

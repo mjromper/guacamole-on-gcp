@@ -20,7 +20,7 @@ metadata:
     namespace: guacamole-prod
 subjects:
 -   kind: ServiceAccount
-    name: svc-guacamole
+    name: svc-guacamole-prod
     namespace: guacamole-prod
 roleRef:
     kind: Role
