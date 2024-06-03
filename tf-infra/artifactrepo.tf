@@ -13,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+/*
+# Commented out for PROD
 resource "google_artifact_registry_repository" "guac-repo" {
   location      = var.region
   repository_id = "guac-repo-prod"
@@ -28,3 +30,4 @@ resource "google_artifact_registry_repository_iam_member" "artifactregistry-iam"
   role = "roles/artifactregistry.reader"
   member = "serviceAccount:${data.google_compute_default_service_account.default.email}"
 }
+*/

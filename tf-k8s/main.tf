@@ -34,7 +34,7 @@ data "google_container_cluster" "gke" {
 
 resource "kubernetes_namespace" "guacamole-ns" {
   metadata {
-    name = "guacamole"
+    name = "guacamole-prod"
   }
 }
 
