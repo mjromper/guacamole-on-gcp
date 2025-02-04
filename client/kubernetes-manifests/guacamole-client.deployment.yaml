@@ -17,7 +17,7 @@
   kind: Deployment
   metadata:
     name: guacamole-client
-    namespace: guacamole-prod
+    namespace: guacamole-new1
     labels:
       app: guacamole-client
   spec:
@@ -37,7 +37,7 @@
         labels:
           app: guacamole-client
       spec:
-        serviceAccountName: svc-guacamole-prod
+        serviceAccountName: svc-guacamole-new1
         containers:
         - name: guacamole-client
           image: guacamole-client-iap

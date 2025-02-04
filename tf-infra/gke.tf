@@ -15,7 +15,7 @@
 
 resource "google_container_cluster" "gke" {
   provider           = google
-  name               = "guacamole-gke-prod"
+  name               = "guacamole-gke-new1"
   location           = var.region
   networking_mode    = "VPC_NATIVE"
   network            = "workshop" #google_compute_network.vpc.id
