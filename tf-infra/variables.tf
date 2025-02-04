@@ -68,11 +68,11 @@ variable "q_db_name" {
 }
 
 variable "q_db_address" {
-  default = "presales-dwh.cluster-cdc6ngw47u0b.us-east-2.rds.amazonaws.com"
+  default = "presales-dwh-staging-cluster.cluster-cdc6ngw47u0b.us-east-2.rds.amazonaws.comm"
 }
 
 variable "q_mysql_password" {
-  default = "Rps76RycEQ5?@5EB"
+  default = "xxxxxxxxxxx"
 }
 
 variable "q_mysql_user" {

@@ -4,6 +4,7 @@ GUACD_PORT=4822
 MYSQL_HOSTNAME=${db_address}
 MYSQL_PORT=3306
 MYSQL_DATABASE=APP_guacamole_uat
-LOGBACK_LEVEL=info
-EXTENSION_PRIORITY=*,openid
+LOGBACK_LEVEL=debug
+EXTENSION_PRIORITY=*,mysql
+PROXY_URL=http://guacamole-client-service
 
