@@ -42,7 +42,8 @@ variable "db_management_vm" {
 
 variable "nwr_master_node" {
   description = "GKE Private Cluster Master Node Network Range"
-  default     = "172.16.0.48/28" #"172.16.0.32/28"
+  #default     = "172.16.0.48/28" #"172.16.0.32/28"
+  default     = "172.16.2.48/28"
 }
 
 variable "required_apis" {
