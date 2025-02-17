@@ -17,9 +17,9 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
     name: guacamole-client-ingress
-    namespace: guacamole-new1
+    namespace: guacamole-stage1
     annotations:
-        kubernetes.io/ingress.global-static-ip-name: guacamole-external-new1
+        kubernetes.io/ingress.global-static-ip-name: guacamole-external-stage1
         networking.gke.io/managed-certificates: guacamole-client-cert
 spec:
     defaultBackend:

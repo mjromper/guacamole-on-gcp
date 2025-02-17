@@ -34,13 +34,13 @@ data "google_container_cluster" "gke" {
 
 resource "kubernetes_namespace" "guacamole-ns" {
   metadata {
-    name = "guacamole-new1"
+    name = "guacamole-stage1"
   }
 }
 
 module "guacamole-workload-identity" {
   source                          = "terraform-google-modules/kubernetes-engine/google//modules/workload-identity"
-  name                            = "svc-guacamole-new1"
+  name                            = "svc-guacamole-stage1"
   namespace                       = kubernetes_namespace.guacamole-ns.metadata[0].name
   project_id                      = var.project_id
   use_existing_k8s_sa             = false

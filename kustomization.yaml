@@ -23,7 +23,7 @@ configMapGenerator:
 - envs:
   - ./client/client-settings.properties
   name: guacamole-client-settings
-  namespace: guacamole-new1
+  namespace: guacamole-stage1
 #- files:
 #  - truststore.jks
 #  - clientstore.jks
@@ -35,11 +35,11 @@ secretGenerator:
 - envs:
   - ./client/db-secrets.properties
   name: db-user-pass
-  namespace: guacamole-new1
+  namespace: guacamole-stage1
 - envs:
   - ./client/openid-secrets.properties
   name: guacamole-openid-secret
-  namespace: guacamole-new1
+  namespace: guacamole-stage1
 #- envs:
 #  - ./client/iap-secrets.properties
 #  name: guacamole-iap-secret

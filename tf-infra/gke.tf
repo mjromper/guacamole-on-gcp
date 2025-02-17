@@ -15,11 +15,12 @@
 
 resource "google_container_cluster" "gke" {
   provider           = google
-  name               = "guacamole-gke-new1"
+  name               = "guacamole-gke-stage1"
   location           = var.region
   networking_mode    = "VPC_NATIVE"
   network            = "workshop" #google_compute_network.vpc.id
   subnetwork         = "workshop" #google_compute_subnetwork.subnet.name
+  description        = "Guacamole cluster - created from Terraform"
 
   private_cluster_config {
     enable_private_nodes    = true
@@ -27,7 +28,7 @@ resource "google_container_cluster" "gke" {
     master_ipv4_cidr_block  = var.nwr_master_node
   }
 
-  enable_autopilot = true
+  enable_autopilot = false
 
   #Updated to TF Provider 5.6, no longer need to explicityly define the below block, as it's the default now
   #When using TF provider <4.80, need to explicitly define CLOUD_DNS as cluster_dns per b/295958728
