@@ -30,6 +30,8 @@ resource "google_container_cluster" "gke" {
 
   enable_autopilot = true
 
+  deletion_protection = false
+
   #initial_node_count       = 1
 
   #Updated to TF Provider 5.6, no longer need to explicityly define the below block, as it's the default now
