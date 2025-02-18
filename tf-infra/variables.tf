@@ -44,7 +44,8 @@ variable "nwr_master_node" {
   description = "GKE Private Cluster Master Node Network Range"
   #default     = "172.16.0.48/28" #"172.16.0.32/28"
   # default     = "172.16.2.48/28" #--> NEW1 
-  default     = "172.16.3.48/28" #--> STAGE1
+  #default     = "172.16.3.48/28" #--> STAGE1
+  default     = "172.16.4.48/28" #--> STAGE
 }
 
 variable "required_apis" {
