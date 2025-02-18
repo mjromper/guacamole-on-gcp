@@ -28,9 +28,9 @@ resource "google_container_cluster" "gke" {
     master_ipv4_cidr_block  = var.nwr_master_node
   }
 
-  enable_autopilot = false
+  enable_autopilot = true
 
-  initial_node_count       = 1
+  #initial_node_count       = 1
 
   #Updated to TF Provider 5.6, no longer need to explicityly define the below block, as it's the default now
   #When using TF provider <4.80, need to explicitly define CLOUD_DNS as cluster_dns per b/295958728
