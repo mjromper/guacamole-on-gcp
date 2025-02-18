@@ -75,6 +75,6 @@ output "subnet" {
   description = "Network subnet to attach test VMs to"
 }
 
-variable "environment" {
-  default = var.q_environment
+output "environment" {
+  value = var.q_environment
 }
