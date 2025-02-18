@@ -74,3 +74,7 @@ output "subnet" {
   value       = data.google_compute_subnetwork.subnet.name
   description = "Network subnet to attach test VMs to"
 }
+
+variable "environment" {
+  default = var.q_environment
+}

@@ -72,6 +72,14 @@ variable "q_db_address" {
   default = "presales-dwh-staging-cluster.cluster-cdc6ngw47u0b.us-east-2.rds.amazonaws.comm"
 }
 
+variable "q_environment" {
+  default = "staging"
+}
+
+variable "q_deployment" {
+  default = "stage"
+}
+
 variable "q_mysql_password" {
   default = "xxxxxxxxxxx"
 }

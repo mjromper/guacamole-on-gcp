@@ -28,19 +28,19 @@ provider "kubernetes" {
 data "google_client_config" "provider" {}
 
 data "google_container_cluster" "gke" {
-  name     = var.cluster_name
+  name     = "${var.cluster_name}-${var.deployment}"
   location = var.region
 }
 
 resource "kubernetes_namespace" "guacamole-ns" {
   metadata {
-    name = "guacamole-stage1"
+    name = "guacamole-${var.deployment}"
   }
 }
 
 module "guacamole-workload-identity" {
   source                          = "terraform-google-modules/kubernetes-engine/google//modules/workload-identity"
-  name                            = "svc-guacamole-stage1"
+  name                            = "svc-guacamole-${var.deployment}"
   namespace                       = kubernetes_namespace.guacamole-ns.metadata[0].name
   project_id                      = var.project_id
   use_existing_k8s_sa             = false

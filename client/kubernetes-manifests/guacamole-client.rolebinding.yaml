@@ -17,11 +17,11 @@ kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
     name: service-reader-binding
-    namespace: guacamole-stage1
+    namespace: guacamole-stage
 subjects:
 -   kind: ServiceAccount
-    name: svc-guacamole-stage1
-    namespace: guacamole-stage1
+    name: svc-guacamole-stage
+    namespace: guacamole-stage
 roleRef:
     kind: Role
     name: service-reader
