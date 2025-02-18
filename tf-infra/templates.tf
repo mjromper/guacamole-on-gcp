@@ -48,6 +48,7 @@ resource "local_file" "client-settings-properties" {
     db_address           = var.q_db_address #google_sql_database_instance.guacamole-mysql.private_ip_address
     truststore_password  = random_password.keystore_password.result
     clientstore_password = random_password.keystore_password.result
+    environment          = var.q_environment
   })
 
   filename = "${path.module}/../client/client-settings.properties"
